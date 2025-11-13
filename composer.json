@@ -1,0 +1,17 @@
+{
+    "name": "tibot/musicode_td21_4",
+    "autoload": {
+        "psr-4": {
+            "Tibot\\MusicodeTd214\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tibotsr",
+            "email": "tibo.tessier@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
