@@ -477,3 +477,16 @@ body {
         gap: 0;
     }
 }
+
+/* Style du bouton Déconnexion dans le header */
+.btn-logout {
+    background-color: rgba(255, 255, 255, 0.2); /* Blanc transparent */
+    padding: 0.5rem 1rem !important; /* Force le padding */
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Plus clair au survol */
+    text-decoration: none !important;
+}
