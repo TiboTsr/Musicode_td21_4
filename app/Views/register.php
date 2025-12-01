@@ -165,7 +165,6 @@ require_once __DIR__ . '/includes/header.php';
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.style.display === 'block') hideModal(); });
 })();
 
-// Success modal behaviour
 (function(){
     const successOverlay = document.getElementById('success-overlay');
     const successModal = document.getElementById('success-modal');
