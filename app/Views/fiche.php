@@ -33,7 +33,7 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Lien retour -->
         <div class="back-link-container">
             <!-- On retourne vers la page d'où l'on vient -->
-            <a href="home.php" class="back-link">← Retour au catalogue</a>
+            <a href="catalogue.php" class="back-link">← Retour au catalogue</a>
         </div>
 
         <!-- Carte Détail -->
