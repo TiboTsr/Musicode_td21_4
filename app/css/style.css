@@ -617,7 +617,7 @@ body {
     align-items: center;
     transition: background-color 0.2s;
     white-space: nowrap; 
-
+}
 .btn-new-music:hover {
     background-color: #0369a1; 
 }
