@@ -531,3 +531,75 @@ body {
 .btn-remove:hover {
     background-color: #fecaca;
 }
+
+/* --- Formulaire Ajout Musique --- */
+
+.form-container {
+    background-color: (--bg-color);
+    padding: 0; /* Fond blanc global comme sur l'image */
+    max-width: 800px; /* Largeur contenue */
+}
+
+/* Champs de saisie style "outline" */
+.add-music-form input[type="text"] {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid #e5e7eb; /* Gris très clair */
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #fff;
+    color: var(--text-main);
+    margin-top: 0.25rem;
+}
+
+.add-music-form input::placeholder {
+    color: #9ca3af; /* Gris clair pour le placeholder */
+}
+
+/* Inputs durée spécifiques */
+.duration-inputs {
+    display: flex;
+    align-items: flex-start; /* Aligner en haut pour gérer les labels sous les inputs */
+    gap: 1rem;
+}
+
+.duration-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+.duration-field input {
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.duration-separator {
+    padding-top: 0.75rem; /* Aligner avec le texte des inputs */
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.duration-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* Bouton spécifique */
+.btn-primary-action {
+    background-color: #0284c7; /* Bleu spécifique de l'image (sky-700 approx) */
+    width: auto; /* Pas pleine largeur */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 2rem;
+}
+
+.btn-primary-action:hover {
+    background-color: #0369a1;
+}
