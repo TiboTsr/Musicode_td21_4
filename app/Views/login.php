@@ -33,8 +33,9 @@ require_once 'includes/header.php';
         <h1 class="auth-title">Connexion</h1>
         <p style="text-align:center; color:#6b7280; margin-bottom:1.5rem;">Accédez à votre bibliothèque Musicode.</p>
 
+    <div class="card card-login">
         <?php if (!empty($error)): ?>
-            <div style="color: #ef4444; background-color: #fee2e2; padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 0.9em;">
+            <p class="form-error">
                 <?= htmlspecialchars($error) ?>
             </div>
         <?php endif; ?>
