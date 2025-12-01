@@ -532,19 +532,16 @@ body {
     background-color: #fecaca;
 }
 
-/* --- Formulaire Ajout Musique --- */
-
 .form-container {
     background-color: (--bg-color);
-    padding: 0; /* Fond blanc global comme sur l'image */
-    max-width: 800px; /* Largeur contenue */
+    padding: 0; 
+    max-width: 800px; 
 }
 
-/* Champs de saisie style "outline" */
 .add-music-form input[type="text"] {
     width: 100%;
     padding: 0.875rem;
-    border: 1px solid #e5e7eb; /* Gris très clair */
+    border: 1px solid #e5e7eb; 
     border-radius: 0.5rem;
     font-size: 1rem;
     background-color: #fff;
@@ -553,13 +550,12 @@ body {
 }
 
 .add-music-form input::placeholder {
-    color: #9ca3af; /* Gris clair pour le placeholder */
+    color: #9ca3af; 
 }
 
-/* Inputs durée spécifiques */
 .duration-inputs {
     display: flex;
-    align-items: flex-start; /* Aligner en haut pour gérer les labels sous les inputs */
+    align-items: flex-start; 
     gap: 1rem;
 }
 
@@ -580,7 +576,7 @@ body {
 }
 
 .duration-separator {
-    padding-top: 0.75rem; /* Aligner avec le texte des inputs */
+    padding-top: 0.75rem; 
     font-weight: bold;
     color: var(--text-muted);
 }
@@ -591,10 +587,9 @@ body {
     margin-top: 0.25rem;
 }
 
-/* Bouton spécifique */
 .btn-primary-action {
-    background-color: #0284c7; /* Bleu spécifique de l'image (sky-700 approx) */
-    width: auto; /* Pas pleine largeur */
+    background-color: #0284c7; 
+    width: auto; 
     padding-left: 2rem;
     padding-right: 2rem;
     margin-top: 2rem;
@@ -602,4 +597,54 @@ body {
 
 .btn-primary-action:hover {
     background-color: #0369a1;
+}
+
+.page-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.btn-new-music {
+    background-color: #0284c7; 
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s;
+    white-space: nowrap; 
+
+.btn-new-music:hover {
+    background-color: #0369a1; 
+}
+
+.btn-add {
+    background-color: #e0f2fe; 
+    color: #0284c7;            
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #bae6fd; 
+}
+
+@media (max-width: 640px) {
+    .page-header-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-new-music {
+        width: 100%; 
+        justify-content: center;
+    }
 }
