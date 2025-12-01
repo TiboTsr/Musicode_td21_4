@@ -194,3 +194,92 @@ body {
     color: var(--text-muted);
     font-size: 0.875rem;
 }
+
+/* --- AJOUTER CECI A LA FIN DE style.css --- */
+
+/* Centrage vertical de la page d'auth */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px); /* Hauteur totale moins le header/footer */
+}
+
+/* La carte blanche style "Musicode" */
+.auth-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--border-color);
+}
+
+.auth-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* Champs de texte stylisés */
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box; /* IMPORTANT pour ne pas casser la largeur */
+}
+
+.form-group input:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+}
+
+/* Bouton violet */
+.btn-submit {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right, #8b5cf6, #a78bfa);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    transition: opacity 0.2s;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+.auth-footer {
+    margin-top: 1.5rem;
+    text-align: left;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.text-link {
+    color: #6366f1;
+    text-decoration: none;
+}
