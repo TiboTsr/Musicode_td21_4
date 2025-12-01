@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "Musicode - Catalogue";
+
 $musiques = [
     [
         'titre' => 'Bohemian Rhapsody',
@@ -22,36 +24,10 @@ $musiques = [
         'id' => 3
     ]
 ];
+
+// Inclusion du header
+require_once 'includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musicode - Catalogue</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </div>
-                <span>Musicode</span>
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="#">Catalogue</a></li>
-                <li><a href="#">Connexion</a></li>
-                <li><a href="#">Inscription</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <main class="container main-content">
         
@@ -90,11 +66,4 @@ $musiques = [
         </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 Musicode - IUT Laval - R3.01 Développement web 2025-2026.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>
