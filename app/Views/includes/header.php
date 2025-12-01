@@ -16,7 +16,7 @@ if (!isset($pageTitle)) {
 
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="home.php" class="logo">
+            <a href="#" class="logo">
                 <div class="logo-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
                         <path d="M8 5v14l11-7z"/>
@@ -26,7 +26,7 @@ if (!isset($pageTitle)) {
             </a>
 
             <ul class="nav-links">
-                <li><a href="#">Catalogue</a></li>
+                <li><a href="catalogue.php">Catalogue</a></li>
                 <li><a href="login.php">Connexion</a></li>
                 <li><a href="sign_up.php">Inscription</a></li>
             </ul>
