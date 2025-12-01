@@ -28,7 +28,7 @@ if (!isset($pageTitle)) {
             <ul class="nav-links">
                 <li><a href="#">Catalogue</a></li>
                 <li><a href="login.php">Connexion</a></li>
-                <li><a href="#">Inscription</a></li>
+                <li><a href="sign_up.php">Inscription</a></li>
             </ul>
         </div>
     </nav>
