@@ -194,17 +194,13 @@ body {
     color: var(--text-muted);
     font-size: 0.875rem;
 }
-
-/* --- Styles spécifiques pour la fiche détail --- */
-
-/* Lien retour */
 .back-link-container {
-    margin-bottom: 1.5rem; /* Espace sous le lien */
+    margin-bottom: 1.5rem; 
 }
 
 .back-link {
     text-decoration: none;
-    color: var(--text-muted); /* Gris moyen */
+    color: var(--text-muted); 
     font-size: 0.9rem;
     transition: color 0.2s;
 }
@@ -213,19 +209,18 @@ body {
     color: var(--text-main);
 }
 
-/* Carte détail centrée */
 .detail-card {
     background-color: white;
-    border-radius: 1.5rem; /* Coins très arrondis comme sur l'image */
-    padding: 3rem;         /* Beaucoup d'espace interne */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Ombre douce */
-    max-width: 600px;      /* Largeur max pour éviter que ça s'étale trop */
-    margin: 0 auto;        /* Centrage horizontal */
+    border-radius: 1.5rem; 
+    padding: 3rem;         
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    max-width: 600px;      
+    margin: 0 auto;        
 }
 
-/* Typographie */
+
 .detail-title {
-    font-size: 2.5rem;     /* Grand titre */
+    font-size: 2.5rem;   
     font-weight: 700;
     margin: 0 0 0.5rem 0;
     color: var(--text-main);
@@ -234,7 +229,7 @@ body {
 .detail-artist {
     font-size: 1.25rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;   /* Espace sous l'artiste */
+    margin-bottom: 2rem; 
 }
 
 .detail-meta {
@@ -245,11 +240,10 @@ body {
 }
 
 .meta-value {
-    color: var(--text-muted); /* Valeur un peu plus foncée */
+    color: var(--text-muted); 
     font-weight: 500;
 }
 
-/* Bouton "Ajouter" */
 .detail-actions {
     margin-top: 2rem;
 }
@@ -270,17 +264,13 @@ body {
     opacity: 0.9;
 }
 
-/* --- AJOUTER CECI A LA FIN DE style.css --- */
-
-/* Centrage vertical de la page d'auth */
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 140px); /* Hauteur totale moins le header/footer */
+    min-height: calc(100vh - 140px); 
 }
 
-/* La carte blanche style "Musicode" */
 .auth-card {
     background-color: var(--card-bg);
     padding: 2.5rem;
@@ -310,7 +300,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Champs de texte stylisés */
 .form-group input {
     width: 100%;
     padding: 0.75rem;
@@ -319,7 +308,7 @@ body {
     font-size: 0.95rem;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
-    box-sizing: border-box; /* IMPORTANT pour ne pas casser la largeur */
+    box-sizing: border-box;
 }
 
 .form-group input:focus {
@@ -327,7 +316,7 @@ body {
     box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
 }
 
-/* Bouton violet */
+
 .btn-submit {
     display: block;
     width: 100%;
@@ -377,7 +366,7 @@ body {
 
 .form-input {
     width: 100%;
-    padding: 0.35rem 0.6rem;       /* hauteur plus petite */
+    padding: 0.35rem 0.6rem;       
     border-radius: 0.5rem;
     border: 1px solid #e5e7eb;
     font-size: 0.875rem;
@@ -413,34 +402,28 @@ body {
     margin-bottom: 1rem;
 }
 
-/* --- Styles spécifiques à la page Mon Compte --- */
-
-/* Pour rendre la carte un peu plus large que celle de connexion */
 .account-card {
     max-width: 600px; 
 }
 
-/* Grille pour mettre les champs côte à côte */
 .form-row {
     display: flex;
-    gap: 1.5rem; /* Espace entre les deux champs */
+    gap: 1.5rem; 
 }
 
 .col-half {
-    flex: 1; /* Chaque colonne prend 50% de la place */
+    flex: 1; 
 }
 
-/* Texte d'aide gris */
 .form-help {
     font-size: 0.8rem;
     color: var(--text-light);
-    margin-top: -0.5rem; /* On remonte un peu le texte */
+    margin-top: -0.5rem;
     margin-bottom: 1.5rem;
 }
 
-/* Bouton Rose (Gradient spécifique à l'image) */
 .btn-pink {
-    background: linear-gradient(to right, #c084fc, #ec4899); /* Violet clair vers Rose */
+    background: linear-gradient(to right, #c084fc, #ec4899); 
     border: none;
     transition: opacity 0.2s, transform 0.1s;
 }
@@ -448,8 +431,6 @@ body {
 .btn-pink:hover {
     opacity: 0.95;
 }
-
-/* Styles pour les messages de succès/erreur */
 .alert {
     padding: 0.75rem;
     border-radius: 0.5rem;
@@ -470,23 +451,83 @@ body {
     border: 1px solid #fecaca;
 }
 
-/* Responsive : Sur mobile, on remet les champs l'un sous l'autre */
 @media (max-width: 640px) {
     .form-row {
         flex-direction: column;
         gap: 0;
     }
 }
-
-/* Style du bouton Déconnexion dans le header */
 .btn-logout {
-    background-color: rgba(255, 255, 255, 0.2); /* Blanc transparent */
-    padding: 0.5rem 1rem !important; /* Force le padding */
+    background-color: rgba(255, 255, 255, 0.2); 
+    padding: 0.5rem 1rem !important; 
     border-radius: 0.5rem;
     transition: background-color 0.2s;
 }
 
 .btn-logout:hover {
-    background-color: rgba(255, 255, 255, 0.4); /* Plus clair au survol */
+    background-color: rgba(255, 255, 255, 0.4); 
     text-decoration: none !important;
+}
+
+.alert-info {
+    background-color: #e0f2fe; 
+    color: #0c4a6e;          
+    border: 1px solid #bae6fd;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.note-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.note-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.note-input {
+    width: 50px;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.btn-update {
+    background-color: #e9d5ff; 
+    color: #7e22ce;            
+    border: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-update:hover {
+    background-color: #d8b4fe;
+}
+
+
+.btn-remove {
+    background-color: #fee2e2; 
+    color: #b91c1c;            
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.btn-remove:hover {
+    background-color: #fecaca;
 }
