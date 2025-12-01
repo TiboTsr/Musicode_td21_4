@@ -194,3 +194,78 @@ body {
     color: var(--text-muted);
     font-size: 0.875rem;
 }
+
+/* --- Styles spécifiques pour la fiche détail --- */
+
+/* Lien retour */
+.back-link-container {
+    margin-bottom: 1.5rem; /* Espace sous le lien */
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--text-muted); /* Gris moyen */
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--text-main);
+}
+
+/* Carte détail centrée */
+.detail-card {
+    background-color: white;
+    border-radius: 1.5rem; /* Coins très arrondis comme sur l'image */
+    padding: 3rem;         /* Beaucoup d'espace interne */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Ombre douce */
+    max-width: 600px;      /* Largeur max pour éviter que ça s'étale trop */
+    margin: 0 auto;        /* Centrage horizontal */
+}
+
+/* Typographie */
+.detail-title {
+    font-size: 2.5rem;     /* Grand titre */
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+}
+
+.detail-artist {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;   /* Espace sous l'artiste */
+}
+
+.detail-meta {
+    margin-bottom: 2.5rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.meta-value {
+    color: var(--text-muted); /* Valeur un peu plus foncée */
+    font-weight: 500;
+}
+
+/* Bouton "Ajouter" */
+.detail-actions {
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #60a5fa, #818cf8); /* Dégradé bleu/indigo */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
