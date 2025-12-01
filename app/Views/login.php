@@ -1,87 +1,61 @@
 <?php
 session_start();
-
-// Titre de la page
 $pageTitle = "Musicode - Connexion";
-
-// Message d'erreur éventuel
 $error = "";
+require_once __DIR__ . '/../db_connect.php';
 
-// Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // Exemple ultra-simple : login en dur (à remplacer par une vérif en BDD)
-    $validEmail = "user@example.com";
-    // Mot de passe "secret123" haché avec password_hash()
-    $validHash = '$2y$10$ABCDEFGHIJKLMNOPQRSTUV1234567890abcdefghi'; // à remplacer par un vrai hash
-
-    if ($email === $validEmail && password_verify($password, $validHash)) { // [web:7]
-        $_SESSION['user_email'] = $email;
-        header('Location: catalogue.php');
-        exit;
+    if (empty($email) || empty($password)) {
+        $error = "Veuillez remplir tous les champs.";
     } else {
-        $error = "Identifiants incorrects.";
+        $stmt = $pdo->prepare("SELECT * FROM UTILISATEUR WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch();
+        if ($user && password_verify($password, $user['motdepasse'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['nom_affichage'];
+            header('Location: catalogue.php');
+            exit;
+        } else {
+            $error = "Email ou mot de passe incorrect.";
+        }
     }
 }
 
-// Inclusion du header
 require_once 'includes/header.php';
 ?>
 
-<main class="container main-content">
-    <div class="page-header">
-        <h1 class="page-title">Connexion</h1>
-        <p class="page-subtitle">Accédez à votre bibliothèque Musicode.</p>
-    </div>
+<main class="main-content flex-center">
+    <div class="auth-card">
+        <h1 class="auth-title">Connexion</h1>
+        <p style="text-align:center; color:#6b7280; margin-bottom:1.5rem;">Accédez à votre bibliothèque Musicode.</p>
 
-    <div class="card" style="max-width: 400px; margin: 0 auto;">
         <?php if (!empty($error)): ?>
-            <p style="color:#dc2626; font-size:0.875rem; margin-top:0; margin-bottom:1rem;">
+            <div style="color: #ef4444; background-color: #fee2e2; padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 0.9em;">
                 <?= htmlspecialchars($error) ?>
-            </p>
+            </div>
         <?php endif; ?>
 
-        <form method="post" action="">
-            <div style="display:flex; flex-direction:column; gap:0.75rem;">
-                <div>
-                    <label for="email" style="font-size:0.875rem; color:#374151; display:block; margin-bottom:0.25rem;">
-                        Adresse e-mail
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        autocomplete="username"
-                        style="width:100%; padding:0.5rem 0.75rem; border-radius:0.5rem; border:1px solid #e5e7eb;"
-                    >
-                </div>
-
-                <div>
-                    <label for="password" style="font-size:0.875rem; color:#374151; display:block; margin-bottom:0.25rem;">
-                        Mot de passe
-                    </label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        required
-                        autocomplete="current-password"
-                        style="width:100%; padding:0.5rem 0.75rem; border-radius:0.5rem; border:1px solid #e5e7eb;"
-                    >
-                </div>
-
-                <button
-                    type="submit"
-                    class="btn-link"
-                    style="margin-top:0.75rem; padding:0.5rem 0.75rem; border-radius:0.5rem; border:none; background-color:#0891b2; color:white; cursor:pointer;"
-                >
-                    Se connecter
-                </button>
+        <form method="post" action="" class="auth-form">
+            <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" required autocomplete="username">
             </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="btn-submit">Se connecter</button>
         </form>
+        
+        <div class="auth-footer">
+            <p>Pas encore de compte ? <a href="sign_up.php" class="text-link">S'inscrire.</a></p>
+        </div>
     </div>
 </main>
 
