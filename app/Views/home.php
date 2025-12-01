@@ -1,32 +1,10 @@
 <?php
-$pageTitle = "Musicode - Catalogue";
-
-$musiques = [
-    [
-        'titre' => 'Bohemian Rhapsody',
-        'artiste' => 'Queen',
-        'album' => 'A Night at the Opera',
-        'duree' => '05"54"',
-        'id' => 1
-    ],
-    [
-        'titre' => 'Imagine',
-        'artiste' => 'John Lennon',
-        'album' => 'Imagine',
-        'duree' => '03"03"',
-        'id' => 2
-    ],
-    [
-        'titre' => 'Stairway to Heaven',
-        'artiste' => 'Led Zeppelin',
-        'album' => 'Led Zeppelin IV',
-        'duree' => '08"02"',
-        'id' => 3
-    ]
-];
-
-// Inclusion du header
-require_once 'includes/header.php';
+require_once __DIR__ . '/../db_connect.php';
+$sql = "SELECT * FROM musique";
+$stmt = $pdo->query($sql);
+$musiques = $stmt->fetchAll();
+$pageTitle = "Catalogue des musiques";
+require_once __DIR__ . '/includes/header.php';
 ?>
 
     <main class="container main-content">
@@ -45,7 +23,7 @@ require_once 'includes/header.php';
                 </h2>
                 
                 <p class="card-info">
-                    <?= htmlspecialchars($musique['artiste']) ?> · Album : <?= htmlspecialchars($musique['album']) ?>
+                    <?= htmlspecialchars($musique['auteur']) ?> · Album : <?= htmlspecialchars($musique['album']) ?>
                 </p>
                 
                 <p class="card-duration">
@@ -66,4 +44,11 @@ require_once 'includes/header.php';
         </div>
     </main>
 
-<?php require_once 'includes/footer.php'; ?>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Musicode - IUT Laval - R3.01 Développement web 2025-2026.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
