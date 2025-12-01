@@ -24,8 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($titre) || empty($artiste)) {
         $error = "Les champs Titre et Artiste sont obligatoires.";
     } else {
-        // Formatage de la durée (ex: 03"03")
-        $duree = sprintf('%02d"%02d"', $min, $sec);
+        // Format compatible SQL TIME : "00:03:00" pour 3 minutes
+        $duree = sprintf('00:%02d:%02d', $min, $sec); 
+
 
         // Insertion dans la BDD
         $sql = "INSERT INTO musique (titre, auteur, album, duree) VALUES (?, ?, ?, ?)";
