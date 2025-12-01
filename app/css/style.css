@@ -1,15 +1,11 @@
-/* css/style.css */
-
-/* --- Configuration globale --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
 :root {
-    --bg-color: #f8fafc;        /* slate-50 */
-    --text-main: #111827;       /* gray-900 */
-    --text-muted: #6b7280;      /* gray-500 */
-    --text-light: #9ca3af;      /* gray-400 */
-    --primary-link: #0891b2;    /* cyan-600 */
-    --border-color: #f1f5f9;    /* slate-100 */
+    --bg-color: #f8fafc;        
+    --text-main: #111827;       
+    --text-muted: #6b7280;      
+    --text-light: #9ca3af;      
+    --primary-link: #0891b2;    
+    --border-color: #f1f5f9;    
     --card-bg: #ffffff;
 }
 
@@ -22,9 +18,9 @@ body {
     flex-direction: column;
 }
 
-/* --- Header / Navigation --- */
+
 .navbar {
-    /* Dégradé similaire à from-sky-300 to-indigo-400 */
+
     background: linear-gradient(to right, #7dd3fc, #818cf8);
     padding: 1rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -46,7 +42,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #1f2937; /* gray-800 */
+    color: #1f2937; 
     gap: 0.75rem;
     font-size: 1.25rem;
     font-weight: 700;
@@ -80,7 +76,6 @@ body {
     color: white;
 }
 
-/* --- Contenu Principal --- */
 .main-content {
     flex-grow: 1;
     padding-top: 2.5rem;
@@ -103,34 +98,27 @@ body {
     margin: 0;
 }
 
-/* --- Grille et Cartes --- */
-/* css/style.css */
-
 .music-grid {
     display: grid;
-    /* On force 3 colonnes de taille égale */
     grid-template-columns: repeat(3, 1fr); 
     gap: 1.5rem;
 }
 
-/* IMPORTANT : On ajoute ceci pour que ça reste joli sur mobile */
 @media (max-width: 1024px) {
     .music-grid {
-        /* Sur tablette : 2 colonnes */
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .music-grid {
-        /* Sur mobile : 1 colonne */
         grid-template-columns: 1fr;
     }
 }
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 0.75rem; /* rounded-xl */
+    border-radius: 0.75rem; 
     padding: 1.5rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.2s;
@@ -158,8 +146,8 @@ body {
 .card-duration {
     font-size: 0.75rem;
     color: var(--text-light);
-    margin: 0 0 2rem 0; /* Marge pour pousser le bas */
-    flex-grow: 1; /* Pousse le footer vers le bas si la carte s'étire */
+    margin: 0 0 2rem 0; 
+    flex-grow: 1;
 }
 
 .card-footer {
@@ -184,7 +172,6 @@ body {
     color: var(--text-light);
 }
 
-/* --- Footer --- */
 .site-footer {
     background-color: white;
     border-top: 1px solid #e5e7eb;
