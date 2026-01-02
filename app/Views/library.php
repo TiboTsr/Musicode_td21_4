@@ -1,53 +1,10 @@
-<?php
-session_start();
-$pageTitle = "Ma bibliothèque - Musicode";
-
-
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit;
+<?php 
+$pageTitle = "Ma Bibliothèque - Musicode";
+require_once __DIR__ . '/includes/header.php'; 
+$root = dirname($_SERVER['SCRIPT_NAME']); 
+if ($root === DIRECTORY_SEPARATOR || $root === '.') {
+    $root = '';
 }
-
-require_once __DIR__ . '/../db_connect.php';
-
-$userId = $_SESSION['user_id'];
-$message = "";
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $musiqueId = $_POST['musique_id'] ?? null;
-    $action = $_POST['action'] ?? '';
-
-    if ($musiqueId) {
-        if ($action === 'update_note') {
-
-            $note = intval($_POST['note']);
-
-            if ($note < 0) $note = 0;
-            if ($note > 5) $note = 5;
-
-            $stmt = $pdo->prepare("UPDATE COLLECTION SET note = ? WHERE utilisateur_id = ? AND musique_id = ?");
-            $stmt->execute([$note, $userId, $musiqueId]);
-            $message = "Votre note a été mise à jour.";
-        } 
-        elseif ($action === 'remove') {
-
-            $stmt = $pdo->prepare("DELETE FROM COLLECTION WHERE utilisateur_id = ? AND musique_id = ?");
-            $stmt->execute([$userId, $musiqueId]);
-            $message = "Musique retirée de votre bibliothèque.";
-        }
-    }
-}
-
-$sql = "SELECT m.*, c.note 
-        FROM MUSIQUE m
-        JOIN COLLECTION c ON m.id = c.musique_id
-        WHERE c.utilisateur_id = ?";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$userId]);
-$myCollection = $stmt->fetchAll();
-
-require_once 'includes/header.php';
 ?>
 
 <main class="container main-content">
@@ -65,7 +22,7 @@ require_once 'includes/header.php';
 
     <?php if (empty($myCollection)): ?>
         <p style="text-align:center; color:#6b7280; margin-top: 2rem;">
-            Votre bibliothèque est vide. <a href="catalogue.php" class="text-link">Ajouter des musiques</a>.
+            Votre bibliothèque est vide. <a href="<?= $root ?>/musics" class="text-link">Ajouter des musiques</a>.
         </p>
     <?php else: ?>
         
@@ -100,4 +57,4 @@ require_once 'includes/header.php';
     <?php endif; ?>
 </main>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

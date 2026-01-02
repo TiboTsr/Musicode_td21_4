@@ -1,54 +1,6 @@
-<?php
-session_start();
-$pageTitle = "Mon compte - Musicode";
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit;
-}
-
-require_once __DIR__ . '/../db_connect.php';
-
-$message = "";
-$messageType = "";
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newName = trim($_POST['nom_affichage'] ?? '');
-    $newPass = $_POST['new_password'] ?? '';
-    $confirm = $_POST['confirm_password'] ?? '';
-    $userId = $_SESSION['user_id'];
-
-    if (empty($newName)) {
-        $message = "Le nom d'affichage ne peut pas être vide.";
-        $messageType = "error";
-    } else {
-        if (!empty($newPass)) {
-            if ($newPass !== $confirm) {
-                $message = "Les mots de passe ne correspondent pas.";
-                $messageType = "error";
-            } else {
-                $hash = password_hash($newPass, PASSWORD_DEFAULT);
-                $stmt = $pdo->prepare("UPDATE UTILISATEUR SET nom_affichage = ?, motdepasse = ? WHERE id = ?");
-                if ($stmt->execute([$newName, $hash, $userId])) {
-                    $message = "Compte mis à jour avec succès.";
-                    $messageType = "success";
-                    $_SESSION['user_name'] = $newName;
-                }
-            }
-        } 
-        else {
-            $stmt = $pdo->prepare("UPDATE UTILISATEUR SET nom_affichage = ? WHERE id = ?");
-            if ($stmt->execute([$newName, $userId])) {
-                $message = "Informations mises à jour.";
-                $messageType = "success";
-                $_SESSION['user_name'] = $newName;
-            }
-        }
-    }
-}
-$stmt = $pdo->prepare("SELECT * FROM UTILISATEUR WHERE id = ?");
-$stmt->execute([$_SESSION['user_id']]);
-$user = $stmt->fetch();
-
-require_once 'includes/header.php';
+<?php 
+$pageTitle = "Mon Compte - Musicode";
+require_once __DIR__ . '/includes/header.php'; 
 ?>
 
 <main class="main-content flex-center">
@@ -90,4 +42,4 @@ require_once 'includes/header.php';
 
 </main>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
