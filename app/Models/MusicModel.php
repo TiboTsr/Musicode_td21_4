@@ -11,8 +11,8 @@ function getMusicById($pdo, $id) {
     return $stmt->fetch();
 }
 
-function addMusic($pdo, $titre, $auteur, $album, $duree) {
-    $sql = "INSERT INTO musique (titre, auteur, album, duree) VALUES (?, ?, ?, ?)";
+function addMusic($pdo, $titre, $auteur, $album, $duree, $added_by) {
+    $sql = "INSERT INTO musique (titre, auteur, album, duree, added_by) VALUES (?, ?, ?, ?, ?)";
     $stmt = $pdo->prepare($sql);
-    return $stmt->execute([$titre, $auteur, $album, $duree]);
+    return $stmt->execute([$titre, $auteur, $album, $duree, $added_by]);
 }

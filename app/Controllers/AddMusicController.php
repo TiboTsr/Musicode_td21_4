@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($titre) || empty($artiste)) {
         $error = "Les champs Titre et Artiste sont obligatoires.";
     } else {
+        $userId = $_SESSION['user_id']; 
         $duree = sprintf('00:%02d:%02d', $min, $sec);
-        
-        if (addMusic($pdo, $titre, $artiste, $album, $duree)) {
+        if (addMusic($pdo, $titre, $artiste, $album, $duree, $userId)) {
             header('Location: ' . $root . '/musics');
             exit;
         } else {
